@@ -18,8 +18,29 @@ Fundamentals Exercise 1: CLI
          b. Use $ cat print contents of file
          c. Use $ grep to search for a word inside file
 
-Example Output:
+Output:
     1. cd ~/Documents/CodingNomads/
     2. mkdir Terminal_testing
-    3. //....
+    3. touch hello.txt
+        touch bonjour.txt
+        touch hola.txt
+    3b. /c/Users/talha/Documents/CodingNomads/Terminal_testing
+    3c. hello.txt, bonjour.txt, hola.txt
+    5. mkdir language
+    6. cp hello.txt language
+    7. mv hola.txt language
+    8a. rm bonjour.txt
+    8b. rm -r language
+    9a. vim hello.txt
+        i (writing stuff) esc :wq
+    9b. cat hello.txt
+        Hello
+        bonjour
+        hola
+        shalom
+        Merhaba
+        Selamunaleykum
+    9c. grep "hola" hello.txt
+        hola
+
 

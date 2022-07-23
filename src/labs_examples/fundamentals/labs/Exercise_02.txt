@@ -10,11 +10,11 @@ Initializing git folder
         b. Make new file
         c. Add file
         d. Commit file
-        c. On Github, create new git_practice repository
-        d. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
+        e. On Github, create new git_practice repository
+        f. Add this new GitHub repository as a new "remote" to your local Git repo. You can do this by using the command
             git remote add <ANY_NAME> <URL_OF_NEW_GITHUB_REPO.git>
-        d. Push commit file to Github
-        e. Practice the following git flow until you feel comfortable:
+        g. Push commit file to Github
+        h. Practice the following git flow until you feel comfortable:
             i.   Create or modify file
             ii.  Add file(s)
             iii. Commit file(s)
@@ -32,3 +32,15 @@ Cloning repository from Github
     3. Create new repository on Github
     4. Add new remote on local machine
     5. Push to new Github repository
+
+Initializing git folder Output:
+    1. mkdir git_practice
+    2a. git init
+    2b. touch hello.txt
+    2c. add hello.txt
+    2d. git commit -m "exercise 2"
+    2f. git remote add learn git@github.com:utstudent/git_practice.git
+    2h. touch hola.txt
+        git add .
+        git commit -m "testing"
+        git push
