@@ -21,5 +21,5 @@ Fundamentals Exercise 1: CLI
 Example Output:
     1. cd ~/Documents/CodingNomads/
     2. mkdir Terminal_testing
-    3. //...
+    3. //....
 
