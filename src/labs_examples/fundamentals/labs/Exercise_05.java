@@ -14,7 +14,7 @@ public class Exercise_05 {
 
         String str = "hello!";
         // please declare an int variable below, and set it to the value of the length of "str"
-        int strLength = str.length;
+        //int strLength = str.length;
 
         String str2 = "hello";
         // please initialize a boolean variable and test whether str is equal to str2
