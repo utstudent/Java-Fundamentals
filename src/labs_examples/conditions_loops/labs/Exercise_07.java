@@ -24,6 +24,7 @@ public class Exercise_07 {
         System.out.println("Enter A word: ");
         String word = scaner.nextLine();
 
+        boolean isDone = false;
         int i = 0;
         char firstVowel = 'a';
 
@@ -33,23 +34,13 @@ public class Exercise_07 {
             while (x < vowels.length()) {
                 if (word.charAt(i) == vowels.charAt(x)) {
                     firstVowel = vowels.charAt(x);
+                    isDone = true;
                     break;
                 }
-
-//            } else if (word.contains("e")) {
-//                firstVowel = 'e';
-//                break;
-//            } else if (word.contains("i")) {
-//                firstVowel = 'i';
-//                break;
-//            } else if (word.contains("o")) {
-//                firstVowel = 'o';
-//                break;
-//            } else if (word.contains("u")) {
-//                firstVowel = 'u';
-//                break;
-//            }
                 x++;
+            }
+            if (isDone) {
+                break;
             }
             i++;
         }

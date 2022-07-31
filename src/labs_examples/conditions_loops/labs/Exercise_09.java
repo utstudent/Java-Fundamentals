@@ -8,4 +8,18 @@ package labs_examples.conditions_loops.labs;
  */
 
 public class Exercise_09 {
+    public static void main(String[] args) {
+
+        int i = 0;
+        int x = 100;
+
+        while(true) {
+            System.out.println(i + " " + x);
+            i++;
+            x--;
+            if (x==i) {
+                break;
+            }
+        }
+    }
 }
