@@ -25,7 +25,7 @@ public class Exercise_05 {
 
         System.out.println("Enter upper bound number: ");
         int upper = scanner.nextInt();
-        
+
         int sum = 0;
         int count = 0;
 
