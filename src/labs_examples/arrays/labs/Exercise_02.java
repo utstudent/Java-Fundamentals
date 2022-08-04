@@ -31,7 +31,7 @@ public class Exercise_02 {
         }
 
 
-        System.out.println("The index for your number is " + index);
+        System.out.println("The index for your number is " + index + "!");
 
 
 
