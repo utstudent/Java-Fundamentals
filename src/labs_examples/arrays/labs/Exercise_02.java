@@ -18,7 +18,7 @@ public class Exercise_02 {
         // write code here
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a number from 1-10: ");
+        System.out.println("Enter A number from 1-10: ");
         int userNumber = scanner.nextInt();
 
         int index = 0;
