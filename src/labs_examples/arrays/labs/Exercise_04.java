@@ -1,5 +1,5 @@
 package labs_examples.arrays.labs;
-
+import java.util.ArrayList;
 /**
  *  Irregular Arrays
  *
@@ -9,5 +9,22 @@ package labs_examples.arrays.labs;
  */
 
 public class Exercise_04 {
+
+    public static void main(String[] args) {
+
+        String [][] names = {
+                {"Talha", "Erva"},
+                {"Fatma", "Harun", "Hatice"},
+                {"Seyfullah", "Hatice", "Zahit", "Kubra"}
+        };
+
+        for(String [] nameList : names) {
+            for (String name : nameList)
+            System.out.println(name);
+            System.out.println();
+        }
+
+    }
+
 
 }
