@@ -15,7 +15,7 @@ public class Exercise_04 {
         String [][] names = {
                 {"Talha", "Erva"},
                 {"Fatma", "Harun", "Hatice"},
-                {"Seyfullah", "Hatice", "Zahit", "Kubra"}
+                {"Seyfullah", "Hatice", "Zahit", "Kubra "}
         };
 
         for(String [] nameList : names) {
