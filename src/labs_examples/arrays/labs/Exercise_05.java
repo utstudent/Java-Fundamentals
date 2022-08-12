@@ -1,5 +1,7 @@
 package labs_examples.arrays.labs;
 
+import java.util.ArrayList;
+
 /**
  *  Traversing Arrays Backwards
  *
@@ -9,5 +11,18 @@ package labs_examples.arrays.labs;
  */
 
 public class Exercise_05 {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> nums = new ArrayList();
+        for(int i =0; i<50;i++){
+            nums.add(i+1);
+        }
+
+        for (int x =nums.size()-1; x>0; x=x-2) {
+            System.out.print(nums.get(x) + " ");
+        }
+
+
+    }
 
 }
