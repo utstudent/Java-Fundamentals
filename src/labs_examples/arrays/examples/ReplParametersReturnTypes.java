@@ -12,6 +12,9 @@ public class ReplParametersReturnTypes {
         boolean answer = isOdd(8);
         System.out.println("Is it odd?: " + answer);
 
+        String reversed = reverseString("programming is cool");
+        System.out.println(reversed);
+
 
 
 
@@ -47,10 +50,15 @@ public class ReplParametersReturnTypes {
 
     public static String reverseString (String a) {
 
-        for(int i = 0; )
-        a.
+        String newString = "";
 
-        return "hi";
+        for(int i = 0; i<a.length(); i++ ) {
+
+            newString = a.charAt(i) + newString;
+
+        }
+        return newString;
+
 
     }
 }
