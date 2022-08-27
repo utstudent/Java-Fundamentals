@@ -93,5 +93,10 @@ public class MethodTraining {
         return true;
     }
 
+    // 6)
+    public static ArrayList<Integer> highLow(ArrayList<Integer> arrayList) {
+        
+    }
+
 }
 
