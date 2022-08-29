@@ -9,15 +9,15 @@ class Example {
 
     public static void main(String[] args){
 
-        Engine myEngine = new Engine(400);
+        CarEngine myCarEngine = new CarEngine(400);
 
         Stereo myStereo = new Stereo("Panasonic");
 
-        Car myCar = new Car(myEngine, myStereo, "XTerra", "Blue");
+        Car myCar = new Car(myCarEngine, myStereo, "XTerra", "Blue");
 
         System.out.println("I drive a " + myCar.color + " " + myCar.model + " with a "
 
-                + myCar.stereo.brand + " stereo, and a " + myCar.engine.horsePower + " engine");
+                + myCar.stereo.brand + " stereo, and a " + myCar.carEngine.horsePower + " engine");
 
         // OR
 
@@ -27,11 +27,11 @@ class Example {
 
 }
 
-class Engine {
+class CarEngine {
 
     double horsePower;
 
-    public Engine(double horsePower){
+    public CarEngine(double horsePower){
 
         this.horsePower = horsePower;
 
@@ -65,7 +65,7 @@ class Stereo {
 
 class Car {
 
-    Engine engine;
+    CarEngine carEngine;
 
     Stereo stereo;
 
@@ -73,9 +73,9 @@ class Car {
 
     String color;
 
-    public Car(Engine engine, Stereo stereo, String model, String color){
+    public Car(CarEngine carEngine, Stereo stereo, String model, String color){
 
-        this.engine = engine;
+        this.carEngine = carEngine;
 
         this.stereo = stereo;
 
@@ -88,7 +88,7 @@ class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "engine=" + engine.toString() +
+                "engine=" + carEngine.toString() +
                 ",\n stereo=" + stereo.toString() +
                 ",\n model='" + model + '\'' +
                 ",\n color='" + color + '\'' +
