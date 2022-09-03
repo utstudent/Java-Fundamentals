@@ -3,7 +3,7 @@ package labs_examples.objects_classes_methods.labs.oop.A_inheritance;
 /**
  * Why does the output print in the order it does?
  *
- * You answer:
+ * You answer: That is the order of the hierarchy. A is the parent of B. And B is the parent of C
  *
  */
 

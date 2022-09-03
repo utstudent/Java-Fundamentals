@@ -1,6 +1,8 @@
 
 Without running the code below, please tell me what it will print.
 
+It will print parent called because it is the parent class
+
 
 
 public class InheritanceTest
