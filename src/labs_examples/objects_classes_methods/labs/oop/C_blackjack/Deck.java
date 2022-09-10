@@ -12,7 +12,7 @@ public class Deck {
     public void populate(){
 
         for (int i; i<) {
-            cards.add
+            cards.add;
         }
     }
 }
