@@ -13,6 +13,7 @@ public class Deck {
 
         for (int i; i<) {
             cards.add;
+            System.out.println("hi");
         }
     }
 }
