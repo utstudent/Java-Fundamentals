@@ -5,8 +5,8 @@ public class Hand {
     ArrayList<Card> cards;
     int handValue;
 
-    public Hand(ArrayList<Card> cards, int handValue) {
-        this.cards = cards;
-        this.handValue = handValue;
+    public Hand() {
+        this.cards = new ArrayList<>();
+        this.handValue = 0;
     }
 }

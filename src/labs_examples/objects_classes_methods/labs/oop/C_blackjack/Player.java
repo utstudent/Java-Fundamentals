@@ -5,9 +5,9 @@ public class Player {
     private Hand hand;
     private int potValue;
 
-    public Player(String name, Hand hand, int potValue) {
+    public Player(String name, int potValue) {
         this.name = name;
-        this.hand = hand;
+        this.hand = new Hand();
         this.potValue = potValue;
     }
 

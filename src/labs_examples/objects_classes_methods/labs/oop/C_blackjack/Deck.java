@@ -4,16 +4,23 @@ public class Deck {
     Card[] cards;
     ArrayList<Integer> usedCards;
 
-    public Deck(Card[] cards, ArrayList<Integer> usedCards) {
-        this.cards = cards;
-        this.usedCards = usedCards;
+    public Deck() {
+        this.cards = new Card[52];
+        this.usedCards = new ArrayList<>();
+        populate();
     }
 
     public void populate(){
 
-        for (int i; i<) {
-            cards;
-            //this is hard
+        int next = 0;
+
+        for (int suit = 0; suit<4; suit++) {
+            for (int value =0 ; value<13; value++) {
+                Card card = new Card(suit,value);
+                cards[next] = card;
+                next++;
+            }
         }
     }
 }
+

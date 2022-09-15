@@ -4,19 +4,23 @@ import java.util.Arrays;
 
 public class Card {
 
-    private char[] suit = new char[]{'♠', '♦', '♥', '♣'};
+    private char[] suits = new char[]{'♠', '♦', '♥', '♣'};
+
+    private int suit;
+
+    private String[] values = new String[]{"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
     private int cardValue;
 
-    public Card(char[] suit, int cardValue) {
+    public Card(int suit, int cardValue) {
         this.suit = suit;
         this.cardValue = cardValue;
     }
 
-    public char[] getSuit() {
+    public int getSuit() {
         return suit;
     }
 
-    public void setSuit(char[] suit) {
+    public void setSuit(int suit) {
         this.suit = suit;
     }
 
@@ -31,8 +35,8 @@ public class Card {
     @Override
     public String toString() {
         return "Card{" +
-                "suit=" + Arrays.toString(suit) +
-                ", cardValue=" + cardValue +
+                "suit=" + suits[suit] +
+                ", cardValue=" + values[cardValue] +
                 '}';
     }
 }
