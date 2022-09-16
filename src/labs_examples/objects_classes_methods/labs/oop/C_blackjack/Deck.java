@@ -26,11 +26,11 @@ public class Deck {
 
     public void deal(Player player){
 
-        int randomNum = (int)Math.floor(Math.random()*(52-1+1)+1);
-
         Hand playerHand = player.getHand();
 
         while (true) {
+            int randomNum = (int)Math.floor(Math.random()*(52));
+
             if (!usedCards.contains(randomNum)){
 
                 playerHand.addCard(cards[randomNum]);

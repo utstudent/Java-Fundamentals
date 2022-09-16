@@ -5,9 +5,9 @@ public class BlackjackController {
 
         Deck deck = new Deck();
 
-        for (Card card: deck.cards) {
-            System.out.println(card);
-        }
+//        for (Card card: deck.cards) {
+//            System.out.println(card);
+//        }
 
         Player player1 = new Player("Yavuz", 100);
         Player player2 = new Player("Talha", 100);
@@ -15,11 +15,21 @@ public class BlackjackController {
         deck.deal(player1);
         deck.deal(player1);
 
+
         player1.showHand();
 
         System.out.println();
 
         System.out.println(player1);
+
+        System.out.println(player1.getHand().returnHandScore());
+
+        deck.deal(player1);
+        deck.deal(player1);
+
+        System.out.println(player1);
+        System.out.println(player1.getHand().returnHandScore());
+
 
     }
 }
