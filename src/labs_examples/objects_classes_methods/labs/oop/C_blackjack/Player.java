@@ -14,19 +14,9 @@ public class Player {
     public String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Hand getHand() {
         return hand;
     }
-
-    public void setHand(Hand hand) {
-        this.hand = hand;
-    }
-
     public int getPotValue() {
         return potValue;
     }
@@ -35,12 +25,15 @@ public class Player {
         this.potValue = potValue;
     }
 
+    public void showHand(){
+        System.out.println(hand);
+    }
+
     @Override
     public String toString() {
-        return "Player{" +
+        return "Player:" +
                 "name='" + name + '\'' +
                 ", hand=" + hand +
-                ", potValue=" + potValue +
-                '}';
+                ", potValue=" + potValue;
     }
 }

@@ -9,5 +9,17 @@ public class BlackjackController {
             System.out.println(card);
         }
 
+        Player player1 = new Player("Yavuz", 100);
+        Player player2 = new Player("Talha", 100);
+
+        deck.deal(player1);
+        deck.deal(player1);
+
+        player1.showHand();
+
+        System.out.println();
+
+        System.out.println(player1);
+
     }
 }

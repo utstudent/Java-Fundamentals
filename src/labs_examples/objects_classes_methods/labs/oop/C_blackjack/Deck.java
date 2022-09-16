@@ -1,5 +1,6 @@
 package labs_examples.objects_classes_methods.labs.oop.C_blackjack;
 import java.util.ArrayList;
+import java.util.Random;
 public class Deck {
     Card[] cards;
     ArrayList<Integer> usedCards;
@@ -21,6 +22,24 @@ public class Deck {
                 next++;
             }
         }
+    }
+
+    public void deal(Player player){
+
+        int randomNum = (int)Math.floor(Math.random()*(52-1+1)+1);
+
+        Hand playerHand = player.getHand();
+
+        while (true) {
+            if (!usedCards.contains(randomNum)){
+
+                playerHand.addCard(cards[randomNum]);
+
+                usedCards.add(randomNum);
+                break;
+            }
+        }
+
     }
 }
 

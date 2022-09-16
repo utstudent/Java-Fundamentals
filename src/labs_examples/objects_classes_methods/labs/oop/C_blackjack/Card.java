@@ -5,9 +5,7 @@ import java.util.Arrays;
 public class Card {
 
     private char[] suits = new char[]{'♠', '♦', '♥', '♣'};
-
     private int suit;
-
     private String[] values = new String[]{"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
     private int cardValue;
 
@@ -15,21 +13,12 @@ public class Card {
         this.suit = suit;
         this.cardValue = cardValue;
     }
-
     public int getSuit() {
         return suit;
     }
 
-    public void setSuit(int suit) {
-        this.suit = suit;
-    }
-
     public int getCardValue() {
         return cardValue;
-    }
-
-    public void setCardValue(int cardValue) {
-        this.cardValue = cardValue;
     }
 
     @Override
@@ -40,3 +29,20 @@ public class Card {
                 '}';
     }
 }
+
+
+//    public Card convertNumToCard(int cardNum) {
+//
+//        for (int i = 0; i<52; i++) {
+//            if (cardNum >0 && cardNum <14) {
+//                Card newCard = new Card(0,cardNum);
+//            } else if (cardNum >13 && cardNum <27) {
+//                Card newCard = new Card(0,cardNum);
+//            } else if (cardNum >26 && cardNum <40) {
+//                Card newCard = new Card(0,cardNum);
+//            } else (cardNum >39 && cardNum <54) {
+//                Card newCard = new Card(0,cardNum);
+//            }
+//        }
+//        return newCard;
+//    }
