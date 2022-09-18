@@ -24,7 +24,7 @@ public class Deck {
         }
     }
 
-    public void deal(Player player){
+    public void deal(Player player){ // gives said player a card
 
         Hand playerHand = player.getHand();
 
