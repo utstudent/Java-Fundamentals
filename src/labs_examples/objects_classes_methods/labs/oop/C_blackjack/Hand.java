@@ -12,6 +12,10 @@ public class Hand {
         this.handValue = 0;
     }
 
+    public void clear(){
+        cards.clear();
+    }
+
     public int returnHandScore(){
 
         handValue = 0;
@@ -21,6 +25,14 @@ public class Hand {
             handValue += values[value];
         }
         return handValue;
+    }
+
+    public boolean isGreaterThan21() { // exercise 2.4
+        if (this.handValue>21) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public ArrayList<Card> getCards() {
@@ -42,9 +54,7 @@ public class Hand {
 
     @Override
     public String toString() {
-        return "Hand{" +
-                "cards=" + cards +
-                ", handValue=" + handValue +
-                '}';
+        return "Your Hand: " + cards +
+                ", Hand value = " + handValue;
     }
 }

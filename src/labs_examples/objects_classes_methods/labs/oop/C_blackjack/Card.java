@@ -23,10 +23,8 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "suit=" + suits[suit] +
-                ", cardValue=" + values[cardValue] +
-                '}';
+        return suits[suit] +
+                values[cardValue];
     }
 }
 

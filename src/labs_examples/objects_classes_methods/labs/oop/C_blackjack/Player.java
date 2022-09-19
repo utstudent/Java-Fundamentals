@@ -11,6 +11,13 @@ public class Player {
         this.potValue = potValue;
     }
 
+    public boolean computerAI(){  // exercise 2.5
+        if (hand.getHandValue()<16){
+            return true;
+        } else {
+            return false;
+        }
+    }
     public String getName() {
         return name;
     }
@@ -21,8 +28,11 @@ public class Player {
         return potValue;
     }
 
-    public void setPotValue(int potValue) {
-        this.potValue = potValue;
+    public void losePotValue(int potValue) {
+        this.potValue -= potValue;
+    }
+    public void gainPotValue(int potValue) {
+        this.potValue += potValue;
     }
 
     public void showHand(){
@@ -31,9 +41,7 @@ public class Player {
 
     @Override
     public String toString() {
-        return "Player:" +
-                "name='" + name + '\'' +
-                ", hand=" + hand +
-                ", potValue=" + potValue;
+        return name +
+                "'s Pot Value= " + potValue;
     }
 }
