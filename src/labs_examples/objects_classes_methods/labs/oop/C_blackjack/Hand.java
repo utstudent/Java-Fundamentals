@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class Hand {
     private ArrayList<Card> cards;
     private int handValue;
-
     private int[] values= {11,2,3,4,5,6,7,8,9,10,10,10,10};
 
     public Hand() {
@@ -23,6 +22,12 @@ public class Hand {
         for (Card card: cards) {
             int value = card.getCardValue();
             handValue += values[value];
+        }
+
+        for (Card card: cards) {
+            if(card.getCardValue() == 0 && handValue >21) {
+                handValue -= 10;
+            }
         }
         return handValue;
     }

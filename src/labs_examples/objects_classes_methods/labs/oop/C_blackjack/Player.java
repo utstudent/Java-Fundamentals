@@ -42,6 +42,6 @@ public class Player {
     @Override
     public String toString() {
         return name +
-                "'s Pot Value= " + potValue;
+                "'s Pot Value = " + potValue;
     }
 }
