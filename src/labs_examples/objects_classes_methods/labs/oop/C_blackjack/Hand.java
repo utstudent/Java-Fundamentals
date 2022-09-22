@@ -59,7 +59,7 @@ public class Hand {
 
     @Override
     public String toString() {
-        return "Your Hand: " + cards +
+        return "Hand: " + cards +
                 ", Hand value = " + handValue;
     }
 }

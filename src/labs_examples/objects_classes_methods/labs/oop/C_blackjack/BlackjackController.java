@@ -5,8 +5,6 @@ public class BlackjackController {
     public static void main(String[] args) {
 
         playBlackJack();
-
-
     }
 
     public static void playBlackJack(){
@@ -35,6 +33,7 @@ public class BlackjackController {
             deck.deal(player2);
 
             System.out.println(player1.getHand());
+            System.out.println("AI's hand: [" + player2.getHand().getCards().get(0) + ", ?]");
 
 
             while (true) {
@@ -51,52 +50,54 @@ public class BlackjackController {
                 if (aiAnswer == true) {
                     deck.deal(player2);
                     System.out.println("AI draws a card");
+                    System.out.println("AI's hand: [" + player2.getHand().getCards().get(0) + ", ?, ?]");
                 } else {
                     System.out.println("AI did not draw a card");
+                    System.out.println("AI's hand: [" + player2.getHand().getCards().get(0) + ", ?]");
+                }
+                if (player1.getHand().getHandValue() > 21) {
+                    break;
                 }
 
                 if (!answer.equals("y") && aiAnswer == false) {
-                    unique = false;
                     break;
                 }
 
-                if (player1.getHand().getHandValue() > 21 && player2.getHand().getHandValue() > 21) {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                    unique = true;
-                    break;
-                } else if (player1.getHand().getHandValue() == player2.getHand().getHandValue()) {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                    unique = true;
-                    break;
-                } else if (player1.getHand().getHandValue() > 21) {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Busted, you lose! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                    unique = true;
-                    player1.losePotValue(betAmount);
-                    player2.gainPotValue(betAmount);
-                    break;
-                } else if (player2.getHand().getHandValue() > 21) {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ AI Busted, you win! "+ "AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                    unique = true;
-                    player2.losePotValue(betAmount);
-                    player1.gainPotValue(betAmount);
-                    break;
-                }
+
+
             }
 
-            if (!unique) {
-                if (player1.getHand().getHandValue() > player2.getHand().getHandValue()) {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You win!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                    player2.losePotValue(betAmount);
-                    player1.gainPotValue(betAmount);
-                } else {
-                    System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You lose!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~" );
-                    player1.losePotValue(betAmount);
-                    player2.gainPotValue(betAmount);
-                }
+            if (player1.getHand().getHandValue() > 21 && player2.getHand().getHandValue() > 21) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Both busted, draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println(player2.getHand());
+            } else if (player1.getHand().getHandValue() == player2.getHand().getHandValue()) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Same value, draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println(player2.getHand());
+            } else if (player1.getHand().getHandValue() > 21) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Busted, you lose! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println(player2.getHand());
+                player1.losePotValue(betAmount);
+                player2.gainPotValue(betAmount);
+            } else if (player2.getHand().getHandValue() > 21) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ AI Busted, you win! "+ "AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println(player2.getHand());
+                player2.losePotValue(betAmount);
+                player1.gainPotValue(betAmount);
+            } else if (player1.getHand().getHandValue() > player2.getHand().getHandValue()) {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You win!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println(player2.getHand());
+                player2.losePotValue(betAmount);
+                player1.gainPotValue(betAmount);
+            } else {
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You lose!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~" );
+                System.out.println(player2.getHand());
+                player1.losePotValue(betAmount);
+                player2.gainPotValue(betAmount);
             }
+
 
             if (player1.getPotValue()<=0) {
-                System.out.println("You went broke, Goodbye!");
+                System.out.println("You went broke, see ya!");
                 break;
             }
 
@@ -111,6 +112,8 @@ public class BlackjackController {
             player1.getHand().clear();
             player2.getHand().clear();
         }
+
+        System.out.println("Play again sometime, Goodbye " + player1.getName() + "!");
 
 
     }
