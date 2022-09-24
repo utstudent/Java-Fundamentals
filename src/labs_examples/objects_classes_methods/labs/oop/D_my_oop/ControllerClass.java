@@ -51,7 +51,7 @@ public class ControllerClass {
 //        String translateLanguage = scanner.nextLine();
 
         while(true) {
-            System.out.println("What word would you like to translate? ");
+            System.out.println("What word would you like to translate? "); // asking for key word
             String translatedWord = scanner.nextLine();
 
             System.out.println("~~~~~~~~~ " + dictionary.get(translatedWord) + " ~~~~~~~~~");
