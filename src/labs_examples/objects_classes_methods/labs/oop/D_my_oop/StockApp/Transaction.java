@@ -1,44 +1,31 @@
 package labs_examples.objects_classes_methods.labs.oop.D_my_oop.StockApp;
+import java.time.LocalDate;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 public class Transaction {
-
     Stock stock;
-    private double boughtValue; // example: stock price was 100$
-    private double boughtAmount; // example: 5 stocks
-    private double totalPurchasePrice; // example: 500$ spent
-    Date(int year, int month, int date) purchaseDate;
+    private double stockValue; // example: stock price was 100$
+    private double stockAmount; // example: 5 stocks
 
-    public Transaction(Stock stock, double boughtValue, double boughtamount, double purchasePrice) { // constructor without date given. Date = today
+    private boolean bought; // true if bought
+    private LocalDate purchaseDate;
+
+    public Transaction(Stock stock, double stockValue, double stockAmount, boolean bought) { // constructor without date given. Date = today
         this.stock = stock;
-        this.boughtValue = boughtValue;
-        this.boughtAmount = boughtamount;
-        this.totalPurchasePrice = purchasePrice;
-
-        Date(int year, int month, int date) = new Date();
-        this.date = today;
-    }
-
-    public Transaction(Stock stock, double boughtValue, double boughtamount, double purchasePrice) { // constructor with date given
-        this.stock = stock;
-        this.boughtValue = boughtValue;
-        this.boughtAmount = boughtamount;
-        this.totalPurchasePrice = purchasePrice;
-
-        Date(int year, int month, int date) = new Date();
-        this.date = date;
-    }
-
-    public void buyStock(Stock stock, double boughtAmount, double boughtPrice, double totalPurchasePrice) {
-        stock.setCurrentValue(boughtPrice); // updates current value
-        stock.setOwnedAmount(stock.getOwnedAmount()+ boughtAmount); // adds to the total owned amount
-        stock.setTotalspent(stock.getTotalspent()+totalPurchasePrice); // adds to the total spent
-        stock.setAvgBuyValue(stock.getTotalspent()/stock.getOwnedAmount()); // updates avg buy value
-
-
+        this.stockValue = stockValue;
+        this.stockAmount = stockAmount;
+        this.bought = bought;
+        this.purchaseDate = java.time.LocalDate.now();
         System.out.println("Successfully recorded!");
+
     }
 
-    public void sellStock(Stock stock) {
-
+    public Transaction(Stock stock, double stockValue, double stockAmount, boolean bought, LocalDate purchaseDate) { // constructor with date given
+        this.stock = stock;
+        this.stockValue = stockValue;
+        this.stockAmount = stockAmount;
+        this.bought = bought;
+        this.purchaseDate = purchaseDate;
+        System.out.println("Successfully recorded!");
     }
 }
