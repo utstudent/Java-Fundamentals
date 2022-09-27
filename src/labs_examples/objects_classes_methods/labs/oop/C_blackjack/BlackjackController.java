@@ -32,7 +32,7 @@ public class BlackjackController {
             deck.deal(player2);
             deck.deal(player2);
 
-            System.out.println(player1.getHand());
+            System.out.println(player1.getName() + "'s " + player1.getHand());
             System.out.println("AI's hand: [" + player2.getHand().getCards().get(0) + ", ?]");
 
 
@@ -43,7 +43,7 @@ public class BlackjackController {
                 if (answer.equals("y")) {
                     deck.deal(player1);
                 }
-                System.out.println(player1.getHand());
+                System.out.println(player1.getName() + "'s " + player1.getHand());
 
                 boolean aiAnswer = player2.computerAI();
 
@@ -69,31 +69,45 @@ public class BlackjackController {
 
             if (player1.getHand().getHandValue() > 21 && player2.getHand().getHandValue() > 21) {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Both busted, draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
             } else if (player1.getHand().getHandValue() == player2.getHand().getHandValue()) {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Same value, draw! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
             } else if (player1.getHand().getHandValue() > 21) {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Busted, you lose! " + "AI's hand value was "+ player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
                 player1.losePotValue(betAmount);
                 player2.gainPotValue(betAmount);
+                player2.addPoint();
             } else if (player2.getHand().getHandValue() > 21) {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ AI Busted, you win! "+ "AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
                 player2.losePotValue(betAmount);
                 player1.gainPotValue(betAmount);
+                player1.addPoint();
             } else if (player1.getHand().getHandValue() > player2.getHand().getHandValue()) {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You win!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
                 player2.losePotValue(betAmount);
                 player1.gainPotValue(betAmount);
+                player1.addPoint();
             } else {
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~ You lose!" + " AI's hand value was " + player2.getHand().getHandValue() + " ~~~~~~~~~~~~~~~~~~~~~~" );
-                System.out.println(player2.getHand());
+                System.out.println("AI's " + player2.getHand());
                 player1.losePotValue(betAmount);
                 player2.gainPotValue(betAmount);
+                player2.addPoint();
             }
+
+            deck.usedCards.clear();
+            player1.getHand().clear();
+            player2.getHand().clear();
+            player1.addGamesPlayed();
+
+            System.out.println();
+            System.out.println("Total games played: " + player1.getGamesPlayed());
+            System.out.println("Your score: " + player1.getGamesWon());
+            System.out.println("AI score: " + player2.getGamesWon());
 
 
             if (player1.getPotValue()<=0) {
@@ -108,9 +122,6 @@ public class BlackjackController {
             if (scanner.nextLine().equals("n")){
                 break;
             }
-            deck.usedCards.clear();
-            player1.getHand().clear();
-            player2.getHand().clear();
         }
 
         System.out.println("Play again sometime, Goodbye " + player1.getName() + "!");

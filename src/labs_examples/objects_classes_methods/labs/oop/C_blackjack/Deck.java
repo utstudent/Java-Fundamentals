@@ -4,6 +4,7 @@ import java.util.Random;
 public class Deck {
     Card[] cards;
     ArrayList<Integer> usedCards;
+
     public Deck() {
         this.cards = new Card[52];
         this.usedCards = new ArrayList<>();
