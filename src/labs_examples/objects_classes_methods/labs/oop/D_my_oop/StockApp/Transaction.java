@@ -6,7 +6,6 @@ public class Transaction {
     Stock stock;
     private double stockValue; // example: stock price was 100$
     private double stockAmount; // example: 5 stocks
-
     private boolean bought; // true if bought
     private LocalDate purchaseDate;
 
@@ -17,6 +16,7 @@ public class Transaction {
         this.bought = bought;
         this.purchaseDate = java.time.LocalDate.now();
         System.out.println("Successfully recorded!");
+        this.stock.setCurrentValue(stockValue);
 
     }
 
@@ -27,5 +27,6 @@ public class Transaction {
         this.bought = bought;
         this.purchaseDate = purchaseDate;
         System.out.println("Successfully recorded!");
+        this.stock.setCurrentValue(stockValue);
     }
 }
