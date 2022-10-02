@@ -14,7 +14,7 @@ public class StockControllerClass {
         ledger.addTransaction(new Transaction(apple, 110, 3, true));
         ledger.addTransaction(new Transaction(apple, 120, 7, true));
 
-        ledger.addTransaction(new Transaction(tesla, 270, 3, true));
+        ledger.addTransaction(new Transaction(tesla, 270, 3, true)); // buying tesla stock
 
 
     }
