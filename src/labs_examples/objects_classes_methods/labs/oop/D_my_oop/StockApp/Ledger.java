@@ -25,5 +25,10 @@ public class Ledger {
         return thisArray;
     }
 
-
+    @Override
+    public String toString() {
+        return "Ledger{" +
+                "transactions=" + transactions +
+                '}';
+    }
 }

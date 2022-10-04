@@ -15,7 +15,7 @@ class Exercise_1 {
     public static void main(String[] args) {
 
         String fileReadPath = "src/labs_examples/input_output/files/KtoD.txt";
-        String fileWritePath = "src/labs_examples/input_output/files/KtoD_copy.txt";
+        String fileWritePath = "src/labs_examples/input_output/files/KtoD_1.txt";
 
         try (BufferedOutputStream bfOut = new BufferedOutputStream(new FileOutputStream(fileWritePath));
              BufferedInputStream bfIn = new BufferedInputStream(new FileInputStream(fileReadPath))){
@@ -27,7 +27,7 @@ class Exercise_1 {
                 String str  = new String(buffer,0, bytesRead);
 
                 bfOut.write(buffer,0, bytesRead);
-                System.out.println(str);
+                System.out.print(str);
             }
 
         } catch (IOException e) {

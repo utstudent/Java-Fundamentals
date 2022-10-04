@@ -1,21 +1,31 @@
 package labs_examples.objects_classes_methods.labs.oop.D_my_oop.StockApp;
 
+import java.util.ArrayList;
+
 public class StockControllerClass {
 
     public static void main(String[] args) {
 
         Ledger ledger = new Ledger();
+        ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
-        Stock apple = new Stock("Apple", "AAPL", 100);
-        Stock tesla = new Stock("Tesla", "TSLA", 150);
-        Stock microsoft = new Stock("Microsoft", "MSFT", 125);
+        Stock bkng = new Stock("Bookings Holding", "BKNG", 1326);
+        Stock wbd = new Stock("Warner Bros", "WBD", 0.4276);
+        Stock ccl = new Stock("Carnival", "CCL", 0.8024);
+        Stock vtrs = new Stock("Viatris", "VTRS", 6.34);
 
-        ledger.addTransaction(new Transaction(apple, 100, 5, true));
-        ledger.addTransaction(new Transaction(apple, 110, 3, true));
-        ledger.addTransaction(new Transaction(apple, 120, 7, true));
+        ledger.addTransaction(new Transaction(bkng,2000, 1944.55, 1.0285, true));
+        ledger.addTransaction(new Transaction(bkng,1000, 1860.27, 0.5376, true));
+        ledger.addTransaction(new Transaction(bkng,5000, 1214.74, 4.1161, true));
+        ledger.addTransaction(new Transaction(bkng,5000, 1214.74, 4.1161, true));
 
-        ledger.addTransaction(new Transaction(tesla, 270, 3, true)); // buying tesla stock
+        transactions = ledger.transactionsByStock(bkng);
 
+        System.out.println("------------------------");
+
+        for (Transaction transaction: transactions) {
+            System.out.println(transaction);
+        }
 
     }
 
