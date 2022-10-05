@@ -5,6 +5,9 @@ public class Stock {
     private String stockSymbol;
     private double currentValue;
     private int marketCap;
+
+    public Stock() {
+    }
     public Stock(String name, String stockSymbol, double currentValue) {
         this.name = name;
         this.currentValue = currentValue;
@@ -13,23 +16,37 @@ public class Stock {
     public double getCurrentValue() {
         return currentValue;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStockSymbol(String stockSymbol) {
+        this.stockSymbol = stockSymbol;
+    }
     public void setCurrentValue(double currentValue) {
         this.currentValue = currentValue;
     }
-
     public int getMarketCap() {
         return marketCap;
     }
-
     public void setMarketCap(int marketCap) {
         this.marketCap = marketCap;
     }
-
     public String getName() {
         return name;
     }
-
     public String getStockSymbol() {
         return stockSymbol;
+    }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "name='" + name + '\'' +
+                ", stockSymbol='" + stockSymbol + '\'' +
+                ", currentValue=" + currentValue +
+                ", marketCap=" + marketCap +
+                '}';
     }
 }
