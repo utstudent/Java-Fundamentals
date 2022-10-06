@@ -1,1 +1,4 @@
-Bookings Holding,BKNG,1326,Warner Bros,WBD,0.4276,Carnival,CCL,0.8024,Viatris,VTRS,6.34
+Bookings Holding,BKNG,1326
+Warner Bros,WBD,0.4276
+Carnival,CCL,0.8024
+Viatris,VTRS,6.34

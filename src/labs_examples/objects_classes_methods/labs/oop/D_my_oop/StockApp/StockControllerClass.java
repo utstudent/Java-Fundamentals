@@ -53,10 +53,15 @@ public class StockControllerClass {
             System.out.println(transaction);
         }
 
+        System.out.println("------------------------");
+
+        for (Stock stock: stocks) {
+            System.out.println(stock);
+        }
+
     }
 
     private static Stock mapValuesToStockObject(String[] values) {
-
         Stock stock = new Stock();
 
         stock.setName(values[0]);
@@ -64,6 +69,18 @@ public class StockControllerClass {
         stock.setCurrentValue(Double.parseDouble(values[2]));
 
         return stock;
+    }
+
+    private static Transaction mapValuesToTransactionObject(String[] values) {
+        Transaction transaction = new Transaction();
+
+        transaction.stock.setName(values[0]);
+        transaction.setBoughtAmount(Double.parseDouble(values[1]));
+        transaction.setStockValue(Double.parseDouble(values[2]));
+        transaction.setStockAmount(Double.parseDouble(values[3]));
+        transaction.setBought(Boolean.parseBoolean(values[4]));
+
+        return transaction;
     }
 
 

@@ -42,11 +42,10 @@ public class Stock {
 
     @Override
     public String toString() {
-        return "Stock{" +
-                "name='" + name + '\'' +
-                ", stockSymbol='" + stockSymbol + '\'' +
-                ", currentValue=" + currentValue +
-                ", marketCap=" + marketCap +
-                '}';
+        return "Stock: " +
+                "Name='" + name + '\'' +
+                ", Stock Symbol='" + stockSymbol + '\'' +
+                ", Current Value=" + currentValue +
+                ", MarketCap=" + marketCap;
     }
 }

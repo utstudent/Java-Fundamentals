@@ -10,6 +10,8 @@ public class Transaction {
     private boolean bought; // true if bought
     private LocalDate purchaseDate;
 
+    public Transaction() {
+    }
     public Transaction(Stock stock, double boughtAmount, double stockValue, double stockAmount, boolean bought) { // constructor without date given. Date = today
         this.stock = stock;
         this.boughtAmount = boughtAmount;
@@ -21,7 +23,6 @@ public class Transaction {
         this.stock.setCurrentValue(stockValue);
 
     }
-
     public Transaction(Stock stock, double boughtAmount, double stockValue, double stockAmount, boolean bought, LocalDate purchaseDate) { // constructor with date given
         this.stock = stock;
         this.boughtAmount = boughtAmount;
@@ -31,6 +32,54 @@ public class Transaction {
         this.purchaseDate = purchaseDate;
         System.out.println("Successfully recorded!");
         this.stock.setCurrentValue(stockValue);
+    }
+
+    public Stock getStock() {
+        return stock;
+    }
+
+    public void setStock(Stock stock) {
+        this.stock = stock;
+    }
+
+    public double getBoughtAmount() {
+        return boughtAmount;
+    }
+
+    public void setBoughtAmount(double boughtAmount) {
+        this.boughtAmount = boughtAmount;
+    }
+
+    public double getStockValue() {
+        return stockValue;
+    }
+
+    public void setStockValue(double stockValue) {
+        this.stockValue = stockValue;
+    }
+
+    public double getStockAmount() {
+        return stockAmount;
+    }
+
+    public void setStockAmount(double stockAmount) {
+        this.stockAmount = stockAmount;
+    }
+
+    public boolean isBought() {
+        return bought;
+    }
+
+    public void setBought(boolean bought) {
+        this.bought = bought;
+    }
+
+    public LocalDate getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(LocalDate purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
     @Override
