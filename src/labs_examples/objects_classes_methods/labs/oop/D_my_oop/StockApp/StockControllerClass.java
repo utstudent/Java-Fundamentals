@@ -16,16 +16,33 @@ public class StockControllerClass {
         ArrayList<Stock> stocks = new ArrayList<Stock>();
         ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
-        String filePath = "C:/Users/talha/Documents/CodingNomads/labs/online-java-fundamentals/src/labs_examples/objects_classes_methods/files/stocks.txt";
+        String filePath1 = "C:/Users/talha/Documents/CodingNomads/labs/online-java-fundamentals/src/labs_examples/objects_classes_methods/files/stocks.txt";
+        String filePath2 = "C:/Users/talha/Documents/CodingNomads/labs/online-java-fundamentals/src/labs_examples/objects_classes_methods/files/transactions.txt";
 
         try (BufferedReader br =
-                     new BufferedReader(new FileReader(filePath))) {
+                     new BufferedReader(new FileReader(filePath1))) {
 
             String line;
 
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 stocks.add(mapValuesToStockObject(values));
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (BufferedReader br =
+                     new BufferedReader(new FileReader(filePath2))) {
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                transactions.add(mapValuesToTransactionObject(values));
             }
 
         } catch (FileNotFoundException e) {
@@ -74,7 +91,7 @@ public class StockControllerClass {
     private static Transaction mapValuesToTransactionObject(String[] values) {
         Transaction transaction = new Transaction();
 
-        transaction.stock.setName(values[0]);
+        transaction.setStock(values[0]);
         transaction.setBoughtAmount(Double.parseDouble(values[1]));
         transaction.setStockValue(Double.parseDouble(values[2]));
         transaction.setStockAmount(Double.parseDouble(values[3]));
@@ -82,9 +99,7 @@ public class StockControllerClass {
 
         return transaction;
     }
-
-
-
+    
     public static void buyStock(){
 
 

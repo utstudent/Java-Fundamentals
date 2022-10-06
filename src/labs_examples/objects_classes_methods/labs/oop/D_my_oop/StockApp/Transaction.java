@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 public class Transaction {
-    Stock stock;
+    public Stock stock;
     private double boughtAmount; // example: bought 500$ worth
     private double stockValue; // example: stock price was 100$
     private double stockAmount; // example: 5 stocks
@@ -41,6 +41,10 @@ public class Transaction {
     public void setStock(Stock stock) {
         this.stock = stock;
     }
+
+//    public void setStock(String stock) {
+//        this.stock.setName(stock);
+//    }
 
     public double getBoughtAmount() {
         return boughtAmount;
