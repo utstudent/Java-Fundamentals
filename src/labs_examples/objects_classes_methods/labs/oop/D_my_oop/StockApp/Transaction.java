@@ -33,19 +33,12 @@ public class Transaction {
         System.out.println("Successfully recorded!");
         this.stock.setCurrentValue(stockValue);
     }
-
     public Stock getStock() {
         return stock;
     }
-
     public void setStock(Stock stock) {
         this.stock = stock;
     }
-
-//    public void setStock(String stock) {
-//        this.stock.setName(stock);
-//    }
-
     public double getBoughtAmount() {
         return boughtAmount;
     }
@@ -88,13 +81,12 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "stock=" + stock +
+        return "Transaction: " +
+                "stock=" + stock.getStockSymbol() +
                 ", boughtAmount=" + boughtAmount +
                 ", stockValue=" + stockValue +
                 ", stockAmount=" + stockAmount +
                 ", bought=" + bought +
-                ", purchaseDate=" + purchaseDate +
-                '}';
+                ", purchaseDate=" + purchaseDate + "\n";
     }
 }

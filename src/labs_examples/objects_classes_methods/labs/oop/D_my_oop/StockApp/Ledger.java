@@ -8,16 +8,15 @@ public class Ledger {
     public Ledger() {
         this.transactions = new ArrayList<Transaction>();
     }
-
     public void addTransaction(Transaction transaction){
         transactions.add(transaction);
     }
-    public ArrayList<Transaction> transactionsByStock(Stock searchedStock) {
+    public ArrayList<Transaction> transactionsByStock(String stockSymbol) {
 
         ArrayList<Transaction> thisArray = new ArrayList<Transaction>();
 
         for(Transaction transaction: transactions) {
-            if (searchedStock.getName().equals(transaction.stock.getName())) {
+            if (stockSymbol.toUpperCase().equals(transaction.stock.getStockSymbol().toUpperCase())) {
                 thisArray.add(transaction);
             }
         }
@@ -27,8 +26,6 @@ public class Ledger {
 
     @Override
     public String toString() {
-        return "Ledger{" +
-                "transactions=" + transactions +
-                '}';
+        return "All transactions= \n" + transactions;
     }
 }
