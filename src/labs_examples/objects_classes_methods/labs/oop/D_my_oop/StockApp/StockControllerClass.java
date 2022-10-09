@@ -97,7 +97,7 @@ public class StockControllerClass {
                     System.out.println(stock);
                 }
 
-                System.out.println("What you like to add a new stock:");
+                //System.out.println("What you like to add a new stock:"); // in the future can add "add a new stock" functionality
             }
 
             System.out.println("-------------------------------------------------------------");
