@@ -33,11 +33,11 @@ class Counter {
     }
 }
 
+
 class ThreadCount implements Runnable{
     Thread thread;
     Counter counter;
     int num;
-
     public ThreadCount( int num, Counter counter){
         thread = new Thread(this);
         this.num = num;
