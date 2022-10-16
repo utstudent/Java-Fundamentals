@@ -6,7 +6,7 @@ package labs_examples.multi_threading.labs;
  *      Demonstrate the use of a wait() and notify()
  */
 
-// ask jon for help on this
+// ask jon for help on this.
 class Exercise_05 {
     public static void main(String[] args) {
 
