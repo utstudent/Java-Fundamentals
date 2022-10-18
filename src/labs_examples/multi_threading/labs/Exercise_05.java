@@ -6,7 +6,6 @@ package labs_examples.multi_threading.labs;
  *      Demonstrate the use of a wait() and notify()
  */
 
-// ask jon for help on this.
 class Exercise_05 {
     public static void main(String[] args) {
 
@@ -27,7 +26,6 @@ class Counter5 {
 
 
     public synchronized void count1(){
-
         while(!goCount){
             try {
                 wait();
@@ -36,6 +34,7 @@ class Counter5 {
             }
         }
         goCount = false;
+        System.out.println("Counter 1: " + i);
         this.i++;
         notifyAll();
     }
@@ -50,6 +49,7 @@ class Counter5 {
             }
         }
         goCount = true;
+        System.out.println("Counter 2: " + i);
         this.i++;
         notifyAll();
     }
@@ -59,18 +59,20 @@ class Counter5 {
 class ThreadCount5_1 implements Runnable{
     //Thread thread;
     Counter5 counter;
-    //int num;
+    int num;
 
-    public ThreadCount5_1( int num, Counter5 counter){
-        //thread = new Thread(this);
-        //this.num = num;
+    public ThreadCount5_1(int num, Counter5 counter){
+        // thread = new Thread(this);
+        this.num = num;
         this.counter = counter;
     }
 
     @Override
     public void run() {
-        synchronized (counter) { // synchronized word make them take turns
-            counter.count1();
+          { // synchronized word make them take turns
+            while (counter.i<num) {
+                counter.count1();
+            }
         }
         //counter.count(num); this would make it go at the same time
 
@@ -82,17 +84,17 @@ class ThreadCount5_1 implements Runnable{
 class ThreadCount5_2 implements Runnable{
     // Thread thread;
     Counter5 counter;
-    //int num;
+    int num;
 
     public ThreadCount5_2( int num, Counter5 counter){
         //thread = new Thread(this);
-        //this.num = num;
+        this.num = num;
         this.counter = counter;
     }
 
     @Override
     public void run() {
-        synchronized (counter) { // synchronized word make them take turns
+        while (counter.i<num) {
             counter.count2();
         }
         //counter.count(num); this would make it go at the same time
