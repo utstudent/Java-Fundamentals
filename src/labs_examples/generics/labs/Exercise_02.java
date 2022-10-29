@@ -11,3 +11,25 @@ import java.util.ArrayList;
 class Demo{
 
 }
+
+class GenericClass2<N>{
+
+    private N number;
+
+    public GenericClass2(N number) {
+        this.number = number;
+    }
+
+    public static <V extends Number> void sum(ArrayList<V> list){
+        ArrayList<V> firstList = list;
+        V total;
+        V = list.get(0)- list.get(0);
+
+
+        for (int i = 0; i< list.size(); i++) {
+            total = total + list.get(i);
+        }
+
+        //return finalList;
+    }
+}
