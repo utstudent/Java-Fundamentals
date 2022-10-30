@@ -8,11 +8,18 @@ package labs_examples.generics.labs;
  */
 import java.util.ArrayList;
 
-class Demo{
-
-}
-
 class GenericClass2<N>{
+
+    public static void main(String[] args) {
+        ArrayList<Integer> testList = new ArrayList<>();
+        testList.add(5);
+        testList.add(8);
+        testList.add(11);
+        testList.add(4);
+
+        double total = sum(testList);
+        System.out.println(total);
+    }
 
     private N number;
 
@@ -20,16 +27,14 @@ class GenericClass2<N>{
         this.number = number;
     }
 
-    public static <V extends Number> void sum(ArrayList<V> list){
-        ArrayList<V> firstList = list;
-        V total;
-        V = list.get(0)- list.get(0);
+    public static double sum(ArrayList<? extends Number> list){
+        double sum = 0;
 
 
         for (int i = 0; i< list.size(); i++) {
-            total = total + list.get(i);
+            sum = sum + list.get(i).doubleValue();
         }
 
-        //return finalList;
+        return sum;
     }
 }
