@@ -1,7 +1,7 @@
 package labs_examples.generics.labs;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 
 /**
  * Generics Exercise 3:
@@ -21,10 +21,40 @@ import java.util.Collection;
 
 class GenericClass3<N> {
 
-    //private N number;
+    public static void main(String[] args) {
+
+        //exercise 1 test
+        double testSumFunction = sum(45.34,120);
+        System.out.println(testSumFunction);
+        System.out.println("-------------------------------------------------------------");
 
 
-    public static <N extends Number, V extends Number> double sum(N number, V val){
+
+        //exercise 3 test
+        Integer[] testList3 = {5,7,2,9,4};
+        System.out.println("Before: " + Arrays.toString(testList3));
+        exchangePositions(1,3,testList3);
+        System.out.println("After: " + Arrays.toString(testList3));
+
+        String[] testList3_1 = {"hello", "whats", "your", "name"};
+        System.out.println("Before: " + Arrays.toString(testList3_1));
+        exchangePositions(1,3,testList3_1);
+        System.out.println("After: " + Arrays.toString(testList3_1));
+
+        System.out.println("-------------------------------------------------------------");
+
+
+        //exercise 4 test
+        ArrayList<Double> testList4 = new ArrayList<>();
+        testList4.add(23.54);
+        testList4.add(25.90);
+        testList4.add(32.45);
+        testList4.add(29.72);
+
+        double largest = largestInList(testList4);
+        System.out.println(largest);
+    }
+    public static <N extends Number, V extends Number> double sum(N number, V val){ // exercise 1
 
         double sum = 0;
 
@@ -33,10 +63,47 @@ class GenericClass3<N> {
         return sum;
     }
 
-    public static void main(String[] args) {
+//    public static int numberOfPalindromes(ArrayList<? extends String> list) {
+//        int count = 0;
+//
+//        if
+//
+//
+//        return count;
+//    }
 
-        double testSumFunction = sum(45.34,120);
-        System.out.println(testSumFunction);
+//    public static boolean isPalindromes(String word) {
+//
+//        int i = 0;
+//        if (word.charAt(i)==word.charAt(word.lastIndexOf(word)-i)){
+//            i++;
+//
+//        }
+//    }
+
+    public static <T> void exchangePositions(int one, int two,  T[] list) { //exercise 3
+
+        T holder = list[one];
+
+        list[one] = list[two];
+
+        list[two] = holder;
     }
+
+    public static double largestInList(ArrayList<? extends Number> list) { //exercise 4
+        double largest = 0;
+
+        for (int i = 0; i< list.size(); i++){
+            if (list.get(i).doubleValue()>largest) {
+                largest = list.get(i).doubleValue();
+            }
+        }
+
+        return largest;
+    }
+
+
+
+
 
 }
