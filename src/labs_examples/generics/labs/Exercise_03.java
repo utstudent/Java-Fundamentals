@@ -28,6 +28,19 @@ class GenericClass3<N> {
         System.out.println(testSumFunction);
         System.out.println("-------------------------------------------------------------");
 
+        // exercise 2
+        String testWord = "abba";
+        String testWord2 = "abbas";
+        boolean exercise2 = isPalindromes(testWord);
+        boolean exercise2_1 = isPalindromes(testWord2);
+        System.out.println(exercise2);
+        System.out.println(exercise2_1);
+        System.out.println("-------------------------------------------------------------");
+
+        String [] stringArray = {"abba", "abbas", "elle", "talat"};
+        int palindromeCount = numberOfPalindromes(stringArray);
+        System.out.println(palindromeCount);
+        System.out.println("-------------------------------------------------------------");
 
 
         //exercise 3 test
@@ -63,23 +76,28 @@ class GenericClass3<N> {
         return sum;
     }
 
-//    public static int numberOfPalindromes(ArrayList<? extends String> list) {
-//        int count = 0;
-//
-//        if
-//
-//
-//        return count;
-//    }
+    public static <T> int numberOfPalindromes(T[] list) {
+        int count = 0;
 
-//    public static boolean isPalindromes(String word) {
-//
-//        int i = 0;
-//        if (word.charAt(i)==word.charAt(word.lastIndexOf(word)-i)){
-//            i++;
-//
-//        }
-//    }
+        for (int i = 0; i<list.length; i++){
+            if(isPalindromes(String.valueOf(list[i]))) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static boolean isPalindromes(String word) {
+
+        int length = word.length();
+        for (int i = 0; i < length/2; i++){
+            if (word.charAt(i) != word.charAt(length-i-1)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     public static <T> void exchangePositions(int one, int two,  T[] list) { //exercise 3
 

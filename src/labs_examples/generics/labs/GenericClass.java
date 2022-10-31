@@ -12,7 +12,6 @@ import sun.net.www.content.text.Generic;
 
 
 class GenericClass<T> {
-
     private T val;
     private T val2;
 
