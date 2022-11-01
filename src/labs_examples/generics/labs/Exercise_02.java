@@ -7,9 +7,7 @@ package labs_examples.generics.labs;
  *      Numbers in the ArrayList. Demonstrate how to call this method from the main() method.
  */
 import java.util.ArrayList;
-
 class GenericClass2<N>{
-
     public static void main(String[] args) {
         ArrayList<Integer> testList = new ArrayList<>();
         testList.add(5);
@@ -20,13 +18,10 @@ class GenericClass2<N>{
         double total = sum(testList);
         System.out.println(total);
     }
-
     private N number;
-
     public GenericClass2(N number) {
         this.number = number;
     }
-
     public static double sum(ArrayList<? extends Number> list){
         double sum = 0;
 

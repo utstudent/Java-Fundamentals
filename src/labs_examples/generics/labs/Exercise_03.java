@@ -2,6 +2,7 @@ package labs_examples.generics.labs;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Generics Exercise 3:
@@ -37,7 +38,12 @@ class GenericClass3<N> {
         System.out.println(exercise2_1);
         System.out.println("-------------------------------------------------------------");
 
-        String [] stringArray = {"abba", "abbas", "elle", "talat"};
+        ArrayList<String> stringArray = new ArrayList<>();
+        stringArray.add("abba");
+        stringArray.add("abbas");
+        stringArray.add("elle");
+        stringArray.add("talat");
+        stringArray.add("vee");
         int palindromeCount = numberOfPalindromes(stringArray);
         System.out.println(palindromeCount);
         System.out.println("-------------------------------------------------------------");
@@ -66,21 +72,20 @@ class GenericClass3<N> {
 
         double largest = largestInList(testList4);
         System.out.println(largest);
+        System.out.println("-------------------------------------------------------------");
+
+        String largestString = largestInList(stringArray);
+        System.out.println(largestString);
     }
     public static <N extends Number, V extends Number> double sum(N number, V val){ // exercise 1
-
-        double sum = 0;
-
-        sum = number.doubleValue()+ val.doubleValue();
-
-        return sum;
+        return number.doubleValue()+ val.doubleValue();
     }
 
-    public static <T> int numberOfPalindromes(T[] list) {
+    public static <T extends Collection> int numberOfPalindromes(T list) { // exercise 2
         int count = 0;
 
-        for (int i = 0; i<list.length; i++){
-            if(isPalindromes(String.valueOf(list[i]))) {
+        for (int i = 0; i<list.size(); i++){
+            if(isPalindromes(String.valueOf(list.toArray()[i]))) {
                 count++;
             }
         }
@@ -88,7 +93,6 @@ class GenericClass3<N> {
     }
 
     public static boolean isPalindromes(String word) {
-
         int length = word.length();
         for (int i = 0; i < length/2; i++){
             if (word.charAt(i) != word.charAt(length-i-1)){
@@ -108,12 +112,12 @@ class GenericClass3<N> {
         list[two] = holder;
     }
 
-    public static double largestInList(ArrayList<? extends Number> list) { //exercise 4
-        double largest = 0;
+    public static <T extends Comparable> T largestInList(ArrayList<T> list) { //exercise 4
+        T largest = list.get(0);
 
         for (int i = 0; i< list.size(); i++){
-            if (list.get(i).doubleValue()>largest) {
-                largest = list.get(i).doubleValue();
+            if (list.get(i).compareTo(largest)>0) {
+                largest = list.get(i);
             }
         }
 

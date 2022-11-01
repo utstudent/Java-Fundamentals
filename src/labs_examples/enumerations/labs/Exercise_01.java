@@ -8,3 +8,35 @@ package labs_examples.enumerations.labs;
  *      of this enum from a seperate class.
  */
 
+enum Continent {
+    EUROPE (738),
+    ASIA(4581),
+    NORTH_AMERICA(579),
+    SOUTH_AMERICA(422),
+    AFRICA(1216),
+    OCEANIA(38);
+
+    private final int population;
+
+    Continent(int population) {
+        this.population = population;
+    }
+
+    public int getPopulation(){
+        return this.population;
+    }
+}
+
+class main {
+    public static void main(String[] args) {
+
+        Continent thisContinent = Continent.EUROPE;
+
+        if (thisContinent.equals(Continent.EUROPE)){
+            System.out.println("We are in Europe with a population of " + Continent.EUROPE.getPopulation() + " Million!");
+        }
+    }
+}
+
+
+
