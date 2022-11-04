@@ -5,7 +5,7 @@ package labs_examples.enumerations.labs;
  *
  *      1) Create an enumeration. Use a controller class to demonstrate the use of the enum from a seperate class.
  *      2) Create a parameterized enumeration that passes one or more values to it's constructor. Demonstrate the use
- *      of this enum from a seperate class.
+ *      of this enum from a seperate class...
  */
 
 enum Continent {
@@ -15,18 +15,14 @@ enum Continent {
     SOUTH_AMERICA(422),
     AFRICA(1216),
     OCEANIA(38);
-
     private final int population;
-
     Continent(int population) {
         this.population = population;
     }
-
     public int getPopulation(){
         return this.population;
     }
 }
-
 class main {
     public static void main(String[] args) {
 
