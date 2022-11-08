@@ -28,13 +28,13 @@ interface VoidFunctionInterfaceExample {
 }
 
 @FunctionalInterface
-interface OneParamFunctionInterfaceExample {
-    int apply(int x);
+interface OneParamFunctionInterfaceExample <T> {
+    T apply(T t);
 }
 
 @FunctionalInterface
-interface TwoParamFunctionInterfaceExample {
-    double apply(int a, int b);
+interface TwoParamFunctionInterfaceExample <V, T, R>{
+    R apply(V v, T t);
 }
 
 class main{
@@ -50,25 +50,25 @@ class main{
         };
         voidAnonClass.action();
 
-        OneParamFunctionInterfaceExample oneParamFunctionInterfaceExample = (int x) -> x*x;
-        int x = oneParamFunctionInterfaceExample.apply(9);
+        OneParamFunctionInterfaceExample<Integer> oneParamFunctionInterfaceExample = (x) -> x*x;
+        Integer x = oneParamFunctionInterfaceExample.apply(9);
         System.out.println(x);
 
-        OneParamFunctionInterfaceExample oneParamAnonClass = new OneParamFunctionInterfaceExample() {
+        OneParamFunctionInterfaceExample<Integer> oneParamAnonClass = new OneParamFunctionInterfaceExample<Integer>() {
             @Override
-            public int apply(int x) {
+            public Integer apply(Integer x) {
                 return x*x;
             }
         };
         x = oneParamAnonClass.apply(7);
         System.out.println(x);
 
-        TwoParamFunctionInterfaceExample twoParamFunctionInterfaceExample = (int a, int b) -> Double.valueOf(a+b);
+        TwoParamFunctionInterfaceExample<Integer, Integer, Double> twoParamFunctionInterfaceExample = (a, b) -> Double.valueOf(a+b);
         System.out.println(twoParamFunctionInterfaceExample.apply(12,45));
 
-        TwoParamFunctionInterfaceExample twoParamAnonClass = new TwoParamFunctionInterfaceExample() {
+        TwoParamFunctionInterfaceExample<Integer, Integer, Double> twoParamAnonClass = new TwoParamFunctionInterfaceExample<Integer, Integer, Double>() {
             @Override
-            public double apply(int a, int b) {
+            public Double apply(Integer a, Integer b) {
                 return Double.valueOf(a+b);
             }
         };
