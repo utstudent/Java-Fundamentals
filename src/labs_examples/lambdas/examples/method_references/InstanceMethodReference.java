@@ -27,7 +27,6 @@ public class InstanceMethodReference {
 
 
 class ArbitraryObjectExample {
-
     public static void main(String[] args) {
         String[] stringArray = { "Kim", "Caden", "Martin", "Ryan", "Gilad", "Jay", "Sadie"};
 
