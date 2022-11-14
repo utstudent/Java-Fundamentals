@@ -1,4 +1,5 @@
 package labs_examples.lambdas.labs;
+
 import java.util.Arrays;
 import java.util.function.*;
 
@@ -20,7 +21,7 @@ public class Exercise_03{
 
         StaticMethodReference();
         InstanceMethodReference();
-
+        ConstructorMethodReference();
     }
 
 
@@ -43,14 +44,43 @@ public class Exercise_03{
     }
 
     private static void ConstructorMethodReference(){
-        BiFunction<Integer, Double, Double> biFunction = (x, y) -> {
-            Double sum =  x.doubleValue() + y;
-            return sum;
-        };
-        System.out.println(biFunction.apply(5,4.5));
 
-        BiFunction<Integer, Double, Double> biFunctionCM = Double::new;
-        Double d = biFunctionCM.apply(5,4.5);
+        SchoolGenerator schoolGenerator = School::new;
+        School gables = schoolGenerator.createSchool("Gables", 400, 1908, "Arthur Morgan", "Pinkletown");
+        System.out.println(gables.toString());
+
     }
+}
+
+class School{
+    private String name;
+    private int studentCount;
+    private int yearOpened;
+    private String principalName;
+    private String schoolDisctictName;
+
+    public School(String name, int studentCount, int yearOpened, String principalName, String schoolDisctictName) {
+        this.name = name;
+        this.studentCount = studentCount;
+        this.yearOpened = yearOpened;
+        this.principalName = principalName;
+        this.schoolDisctictName = schoolDisctictName;
+    }
+
+    @Override
+    public String toString() {
+        return "school{" +
+                "name='" + name + '\'' +
+                ", studentCount=" + studentCount +
+                ", yearOpened=" + yearOpened +
+                ", principalName='" + principalName + '\'' +
+                ", schoolDisctictName='" + schoolDisctictName + '\'' +
+                '}';
+    }
+}
+
+@FunctionalInterface
+interface SchoolGenerator{
+    School createSchool(String name, int studentCount, int yearOpened, String principalName, String schoolDisctictName);
 }
 
