@@ -25,7 +25,7 @@ import java.util.stream.Stream;
  *      9) Demonstrate the anyMatch() function.
  *      10) Demonstrate the allMatch() function.
  *      11) Demonstrate the collect() terminal operation to store resulting values into a List
- *      do this tomorrow ig. account is locked
+ *      do this tomorrow ig. account is locked...
  */
 
 class Example {
