@@ -4,6 +4,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 
 /**
  * Lambdas Exercise 4:
@@ -25,9 +32,26 @@ import java.util.stream.Stream;
  *      9) Demonstrate the anyMatch() function.
  *      10) Demonstrate the allMatch() function.
  *      11) Demonstrate the collect() terminal operation to store resulting values into a List
- *      do this tomorrow ig. account is locked...
+ *
  */
 
 class Example {
-    
+    public static void main(String[] args) {
+        IntStream
+                .range(1, 15)
+                .forEach(System.out::print);
+
+        System.out.println();
+
+        System.out.println("--------------------------");
+
+        int sum = IntStream.range(1, 6).sum();
+        System.out.println(sum);
+
+        System.out.println("--------------------------");
+
+        List<Integer> nums = Arrays.asList(5,6,2,8,1,4);
+
+        Integer sum3 = nums.stream().map(x -> x+2).
+    }
 }
