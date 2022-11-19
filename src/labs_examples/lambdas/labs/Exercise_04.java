@@ -37,6 +37,7 @@ import java.util.stream.IntStream;
 
 class Example {
     public static void main(String[] args) {
+        // 1)
         IntStream
                 .range(1, 15)
                 .forEach(System.out::print);
@@ -45,13 +46,43 @@ class Example {
 
         System.out.println("--------------------------");
 
+        // 2)
         int sum = IntStream.range(1, 6).sum();
         System.out.println(sum);
 
         System.out.println("--------------------------");
 
-        List<Integer> nums = Arrays.asList(5,6,2,8,1,4);
+        // 3)
+        int [] nums = {5,23,2,14,1,24};
 
-        Integer sum3 = nums.stream().map(x -> x+2).
+        Integer sum3 = Arrays.stream(nums).map(x -> x+2).sum();
+
+        System.out.println(sum3);
+        System.out.println("--------------------------");
+
+        // 4
+        int avg = (int) Arrays.stream(nums).filter(x -> x<10).average().getAsDouble();
+        System.out.println(avg);
+
+        System.out.println("--------------------------");
+
+        // 5
+        int sum5 = Arrays.stream(nums).reduce(0,(int a, int b) -> a+b);
+        System.out.println(sum5);
+
+        System.out.println("--------------------------");
+
+        // 6
+        try{
+            String StringTextFile = "C:\\Users\\talha\\Documents\\CodingNomads\\labs\\online-java-fundamentals\\src\\labs_examples\\lambdas\\labs\\stream_text_lab.csv";
+            Stream<String> textFileLines = Files.lines(Paths.get(StringTextFile));
+
+            textFileLines.forEach(System.out::println);
+        }
+        catch (IOException ioexception) {
+            System.out.println(ioexception);
+        }
+
+
     }
 }
