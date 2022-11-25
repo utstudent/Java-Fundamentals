@@ -32,7 +32,7 @@ import java.util.stream.IntStream;
  *      9) Demonstrate the anyMatch() function.
  *      10) Demonstrate the allMatch() function.
  *      11) Demonstrate the collect() terminal operation to store resulting values into a List
- *      continue tomorrow...
+ *      continue tomorrow... friday?
  */
 
 class Example {
