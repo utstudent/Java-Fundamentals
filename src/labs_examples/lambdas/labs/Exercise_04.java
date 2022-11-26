@@ -32,7 +32,7 @@ import java.util.stream.IntStream;
  *      9) Demonstrate the anyMatch() function.
  *      10) Demonstrate the allMatch() function.
  *      11) Demonstrate the collect() terminal operation to store resulting values into a List
- *      continue tomorrow... friday?
+ *
  */
 
 class Example {
@@ -82,7 +82,33 @@ class Example {
         catch (IOException ioexception) {
             System.out.println(ioexception);
         }
+        System.out.println("--------------------------");
 
+        // 7
+        try{
+            String StringTextFile = "C:\\Users\\talha\\Documents\\CodingNomads\\labs\\online-java-fundamentals\\src\\labs_examples\\lambdas\\labs\\stream_text_lab.csv";
+            Stream<String> textFileLines = Files.lines(Paths.get(StringTextFile));
+
+            textFileLines.map(x -> x.split(",")).forEach(x -> System.out.println( x[1]));
+
+        }catch (IOException ioexception) {
+            System.out.println(ioexception);
+        }
+        System.out.println("--------------------------");
+
+        //8
+        try{
+            String StringTextFile = "C:\\Users\\talha\\Documents\\CodingNomads\\labs\\online-java-fundamentals\\src\\labs_examples\\lambdas\\labs\\stream_text_lab.csv";
+            Stream<String> textFileLines = Files.lines(Paths.get(StringTextFile));
+
+            //double total = (double) textFileLines.map(x -> x.split(",")).reduce(0.0,(Double a, Double b) -> a+b);
+
+        }catch (IOException ioexception) {
+            System.out.println(ioexception);
+        }
+        System.out.println("--------------------------");
+
+        //9
 
     }
 }
