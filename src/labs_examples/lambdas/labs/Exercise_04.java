@@ -89,7 +89,7 @@ class Example {
             String StringTextFile = "C:\\Users\\talha\\Documents\\CodingNomads\\labs\\online-java-fundamentals\\src\\labs_examples\\lambdas\\labs\\stream_text_lab.csv";
             Stream<String> textFileLines = Files.lines(Paths.get(StringTextFile));
 
-            textFileLines.map(x -> x.split(",")).forEach(x -> System.out.println( x[1]));
+            textFileLines.map(x -> x.split(",")).forEach(x -> System.out.println(x[1]));
 
         }catch (IOException ioexception) {
             System.out.println(ioexception);
