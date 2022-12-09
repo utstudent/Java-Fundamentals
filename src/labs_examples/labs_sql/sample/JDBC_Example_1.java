@@ -51,7 +51,7 @@ public class JDBC_Example_1 {
             resultSet = statement.executeQuery("select * from university.courses");
 
 
-            // loop through the result set while there are more records
+            // loop through the result set while there are more records.
             while (resultSet.next()) {
                 // get the id, name and units fields from the result set and assign them to local variables
                 int id = resultSet.getInt("id");
