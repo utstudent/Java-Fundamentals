@@ -70,7 +70,7 @@ public class JDBC_Example_1 {
             e.printStackTrace();
         } finally {
             try {
-                // close all JDBC elements
+                // close all JDBC elements.
                 statement.close();
                 resultSet.close();
                 connection.close();
