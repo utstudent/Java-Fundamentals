@@ -8,7 +8,7 @@ public class CustomLinkedList<T> {
     // this "head" variable will always keep track of the first Node in the list.
     private Node head;
 
-    // this constructor uses VarArgs - meaning you can pass in zero or more data elements to add to the list
+    // this constructor uses VarArgs - meaning you can pass in zero or more data elements to add to the list.
     public CustomLinkedList(T... data) {
 
         if (data.length < 1) {

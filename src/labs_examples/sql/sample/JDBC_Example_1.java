@@ -1,6 +1,8 @@
-package labs_examples.labs_sql.sample;
+package labs_examples.sql.sample;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 public class JDBC_Example_1 {
     public static void main(String[] args)  {
         Connection connection = null;
@@ -62,6 +64,23 @@ public class JDBC_Example_1 {
                 // print out the result
                 System.out.println("Course ID: " + id + " is " + name + " and has " + units + " credits");
             }
+
+            System.out.println("Table: " + resultSet.getMetaData().getTableName(1));
+
+            System.out.println("The columns in the table are: ");
+            for  (int i = 1; i<= resultSet.getMetaData().getColumnCount(); i++){
+                System.out.println("Column " +i  + " "+ resultSet.getMetaData().getColumnName(i));
+            }
+
+            System.out.println("-----------------------------------------------------------------------");
+
+            ArrayList<Course> courses = mapResultSetToObjects(resultSet);
+            for (Course c : courses){
+                System.out.println(c.toString());
+                System.out.println("hi");
+            }
+
+
         } catch (SQLException exc) {
             System.out.println("Exception occurred");
             exc.printStackTrace();
@@ -78,5 +97,17 @@ public class JDBC_Example_1 {
                 e.printStackTrace();
             }
         }
+    }
+    private static ArrayList<Course> mapResultSetToObjects(ResultSet resultSet) throws SQLException {
+        ArrayList<Course> retList = new ArrayList();
+        // ResultSet is initially before the first data set
+        while (resultSet.next()) {
+            Course c = new Course();
+            c.setId(resultSet.getInt("id"));
+            c.setName(resultSet.getString("name"));
+            c.setUnits(resultSet.getInt("units"));
+            retList.add(c);
+        }
+        return retList;
     }
 }
