@@ -12,7 +12,7 @@ public class CustomLinkedList<T> {
     public CustomLinkedList(T... data) {
 
         if (data.length < 1) {
-            // if you don't pass in any data elements it will just instantiate an empty LinkedList (where "head" == null)
+            // if you don't pass in any data elements it will just instantiate an empty LinkedList (where "head" == null).
             head = null;
         } else {
             // if you pass in 1 or more elements, each element will be added to the LinkedList by calling the add() method.
