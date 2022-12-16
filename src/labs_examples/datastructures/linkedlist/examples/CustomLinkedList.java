@@ -29,7 +29,7 @@ public class CustomLinkedList<T> {
      */
     public void add(T data) {
         // call the insert() method, pass in the data as well as the current size of the LinkedList
-        // by calling the size() method which will return the length of the LinkedList
+        // by calling the size() method which will return the length of the LinkedList.
         insert(data);
     }
 
