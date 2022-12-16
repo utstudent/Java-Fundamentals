@@ -54,7 +54,7 @@ public class StockControllerClass {
             e.printStackTrace();
         }
 
-        System.out.println("Hello, welcome to Stock Organizer!");
+        System.out.println("Hello, welcome to the Stock Organizer!");
 
         while (true) {
             System.out.println("What would you like to do? (enter a number 1-6)");
