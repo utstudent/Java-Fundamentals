@@ -32,7 +32,7 @@ public class JDBC_Example_1 {
 
 
             // NOTE: depending on your version of MySQL, you may need to delete "&useSSL=false"
-            // from the connection String below in order to connect to the database.
+            // from the connection String below in order to connect to the database..
 
 
             String connectionString = "jdbc:mysql://localhost:3306/?user=root&password=statefarm";
