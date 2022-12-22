@@ -27,7 +27,7 @@ public class JDBC_Example_1 {
             // on our localhost we don't need the port ":3306", we will also 
             // add the login credentials and one or more other arguments 
             // within the connection String. Your username here is most 
-            // likely "root", unless you have already created 
+            // likely "root", unless you have already created .
             // new database users. The default MySQL username is "root".
 
 
